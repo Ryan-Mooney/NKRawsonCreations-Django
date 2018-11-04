@@ -1,0 +1,47 @@
+{% extends 'nkindexbase.html' %}
+<!DOCTYPE html>
+<html class="index-html" id="index-html">
+	<head>
+		{% block head %}
+		<title>Home</title>
+		{% endblock %}
+	</head>
+	{% block body %}
+	<body onload="typeWriter()" id="index-body">
+		<img src="/static/images/paint-splats.jpg" class="home-splash">
+		<div class ="text-center home-callout container-fluid nkr-home-body">
+			<div class="home-text">
+				<p>Welcome to</p>
+				<p id="demo"></p>
+			</div>	
+			<script>
+				var i = 0;
+				var txt = 'N & K Creations';
+				var speed = 70;
+    
+				function typeWriter() {
+					if (i < txt.length) {
+					document.getElementById("demo").innerHTML += txt.charAt(i);
+					i++;
+					setTimeout(typeWriter, speed);
+					}
+				}
+			</script>
+			</div>
+		</div>
+		<img src="/static/images/paintbrush-left.png" class="pbleft1">
+		<img src="/static/images/paintbrush-left.png" class="pbleft2">
+		<img src="/static/images/paintbrush-left.png" class="pbleft3">
+		<img src="/static/images/paintbrush-left.png" class="pbleft4">
+		<img src="/static/images/paintbrush-right.png" class="pbright1">
+		<img src="/static/images/paintbrush-right.png" class="pbright2">
+		<img src="/static/images/paintbrush-right.png" class="pbright3">
+		<img src="/static/images/paintbrush-right.png" class="pbright4" id="pbright4">
+	{% endblock %}
+	</body>
+	<footer>
+	{% block footer %}
+	{% include 'Katie_Site/footer.html' %}
+	{% endblock %}
+	</footer>
+</html>

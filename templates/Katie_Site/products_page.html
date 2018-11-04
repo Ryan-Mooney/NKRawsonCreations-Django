@@ -1,0 +1,47 @@
+{% extends 'nkbase.html' %}
+<!DOCTYPE html>
+<html class="nkr-html">
+	<head>
+		{% block head %}
+		<title>Home</title>
+		{% endblock %}
+	</head>
+	<body>
+	{% block body %}
+	<nav class="sub-nav" id="sub-nav">
+		<ul class="ml-auto sub-nav-ul">
+			<a href="/NKRawsonCreations/products/collections/clothes" id="sub-nav-link" class="sub-nav-link"><li class="nav-item sub-nav-item">Clothing</li></a>
+			<a href="/NKRawsonCreations/products/collections/home-goods" id="sub-nav-link" class="sub-nav-link"><li class="nav-item sub-nav-item">Home Goods</li></a>
+			<a href="/NKRawsonCreations/products/collections/wall-art" id="sub-nav-link" class="sub-nav-link"><li class="nav-item sub-nav-item">Wall Art</li></a>
+			<a href="/NKRawsonCreations/products/collections/crafts" id="sub-nav-link" class="sub-nav-link"><li class="nav-item sub-nav-item">Crafts</li></a>
+		</ul>
+	</nav>
+	<table class="products-table" id="products-table">
+		<tr class="products-row">
+			<!--<td class="products-data products-filter">
+				<div class="container-fluid products-container">
+					<form method="post" name="product_filter">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<input type="hidden" name="product_matches" value="{{product_matches}}">
+						<input type=submit name="product_filter" value="Filter">
+					</form>
+				</div>
+			</td>-->
+			<td class="products-data products-list">
+				<div class="container-fluid products-container">
+					<ul class="products-ul" style="width:2000">
+						{{products_list | safe}}
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+	{% endblock %}
+	</body>
+	footer>
+	{% block footer %}
+	{% include 'Katie_Site/footer.html' %}
+	{% endblock %}
+	</footer>
+</html>

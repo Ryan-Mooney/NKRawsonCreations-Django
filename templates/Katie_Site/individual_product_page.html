@@ -1,0 +1,34 @@
+{% extends 'nkbase.html' %}
+<!DOCTYPE html>
+<html class="nkr-html">
+	<head>
+		{% block head %}
+		<title>Home</title>
+		{% endblock %}
+	</head>
+	{% block body %}
+	<body>
+		<div class="individual_product_page_body">
+			<table class="individual_product_page_table">
+				<tr>
+					<td align="right" class="individual_product_page_td">
+						<img src={{picture_url}} width=400>
+					</td>
+					<td></td>
+					<td align="left" class="individual_product_page_td">
+						<p>{{name}}</p>
+						<p>${{price|floatformat:2}}</p>
+						<p>{{description}}</p>
+						{{paypal_button|safe}}
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	{% endblock %}
+	<footer>
+	{% block footer %}
+	{% include 'Katie_Site/footer.html' %}
+	{% endblock %}
+	</footer>
+</html>
